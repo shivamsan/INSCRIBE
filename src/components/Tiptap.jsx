@@ -45,7 +45,7 @@ const Tiptap = ({onEditorContentSave}) => {
             </div>
             
             <ul class="flex space-x-3 justify-center md:justify-normal">
-              <li className='bg-gray-400 px-2 py-1 rounded-md mt-5 text-white  bg-gradient-to-r from-gray-400 via-gray-350 to-gray-400'><a href='https://shivamsan.github.io/Editext/'>Home</a></li>
+              <li className='bg-gray-400 px-2 py-1 rounded-md mt-5 text-white  bg-gradient-to-r from-gray-400 via-gray-350 to-gray-400'><a href='https://shivamsan.github.io/INSCRIBE/'>Home</a></li>
                 
               <li className='bg-gray-400 px-2 py-1 rounded-md mt-5 text-white  bg-gradient-to-r from-gray-400 via-gray-350 to-gray-400'><a href='https://github.com/shivamsan'>About</a></li>
               <li className='bg-gray-400 px-2 py-1 rounded-md mt-5 text-white  bg-gradient-to-r from-gray-400 via-gray-350 to-gray-400'><a href='mailto:shivamsingh@nmiet.edu.in'>Contact</a></li>
