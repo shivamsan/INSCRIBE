@@ -1,10 +1,16 @@
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'//extention
 import Underline from '@tiptap/extension-underline'
+import TextAlign from '@tiptap/extension-text-align'
 
 
 // define your extension array
-const extensions = [StarterKit,Underline]
+const extensions = [StarterKit,
+  Underline,
+  TextAlign.configure({
+  types: ['heading', 'paragraph'],
+}),
+]
 
 const content =``
 const Tiptap = ({onEditorContentSave}) => {
@@ -24,8 +30,35 @@ const Tiptap = ({onEditorContentSave}) => {
     }
 
   return (
-    <div className="control-group">
-        <div className="button-group">
+
+    <div className="m-8">
+      <body>
+        <nav class="bg-purple-600 text-white  flex md:justify-between flex-col md:flex-row min-h-30
+        items-center">
+            <div class ="logo mx-auto md:mx-0">
+                @iamshivamsan
+            </div>
+            
+            <ul class="flex space-x-3 justify-center md:justify-normal">
+                <li>Home</li>
+                <li>About</li>
+                <li>Conatct</li>
+                
+            </ul>
+        </nav>
+
+        <main>
+            <div class="container text-white bg-purple-500 flex md:justify-between flex-col md:flex-row min-h-30
+        items-center">
+                Online Text Editor
+            </div>
+        </main>
+
+        <footer>
+
+        </footer>
+    </body>
+        <div className="w-full flex flex-wrap bg-gray-600 p-3 gap-3 text-white">
         
         
         <button
@@ -53,6 +86,7 @@ const Tiptap = ({onEditorContentSave}) => {
               .run()
           }
           className={editor.isActive('italic') ? 'is-active' : ''}
+          bg-gray-400 px-2 py-1 rounded-md mt-5
         >
           <i>I</i>
         </button>
@@ -87,30 +121,12 @@ const Tiptap = ({onEditorContentSave}) => {
         </button>
 
 
-        <button
-          onClick={() => editor.chain().focus().toggleCode().run()}
-          disabled={
-            !editor.can()
-              .chain()
-              .focus()
-              .toggleCode()
-              .run()
-          }
-          className={editor.isActive('code') ? 'is-active' : ''}
-        >
-          Code
-        </button>
-        <button onClick={() => editor.chain().focus().unsetAllMarks().run()}>
-          Clear marks
-        </button>
-        <button onClick={() => editor.chain().focus().clearNodes().run()}>
-          Clear nodes
-        </button>
+        
         <button
           onClick={() => editor.chain().focus().setParagraph().run()}
           className={editor.isActive('paragraph') ? 'is-active' : ''}
         >
-          Paragraph
+          P
         </button>
         <button
           onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
@@ -148,24 +164,53 @@ const Tiptap = ({onEditorContentSave}) => {
         >
           H6
         </button>
+
+        <button
+          onClick={() => editor.chain().focus().setTextAlign('left').run()}
+          className={editor.isActive({ textAlign: 'left' }) ? 'is-active' : ''}
+        >
+          Left
+        </button>
+        <button
+          onClick={() => editor.chain().focus().setTextAlign('center').run()}
+          className={editor.isActive({ textAlign: 'center' }) ? 'is-active' : ''}
+        >
+          Center
+        </button>
+        <button
+          onClick={() => editor.chain().focus().setTextAlign('right').run()}
+          className={editor.isActive({ textAlign: 'right' }) ? 'is-active' : ''}
+        >
+          Right
+        </button>
+        <button
+          onClick={() => editor.chain().focus().setTextAlign('justify').run()}
+          className={editor.isActive({ textAlign: 'justify' }) ? 'is-active' : ''}
+        >
+          Justify
+        </button>
+        <button onClick={() => editor.chain().focus().unsetTextAlign().run()}>
+          Unset
+        </button>
+        
+
+
+
+
+
         <button
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={editor.isActive('bulletList') ? 'is-active' : ''}
         >
-          Bullet list
+          ul
         </button>
         <button
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
           className={editor.isActive('orderedList') ? 'is-active' : ''}
         >
-          Ordered list
+          ol
         </button>
-        <button
-          onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-          className={editor.isActive('codeBlock') ? 'is-active' : ''}
-        >
-          Code block
-        </button>
+
         <button
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
           className={editor.isActive('blockquote') ? 'is-active' : ''}
@@ -173,10 +218,10 @@ const Tiptap = ({onEditorContentSave}) => {
           Blockquote
         </button>
         <button onClick={() => editor.chain().focus().setHorizontalRule().run()}>
-          Horizontal rule
+          Hr
         </button>
         <button onClick={() => editor.chain().focus().setHardBreak().run()}>
-          Hard break
+          Hb
         </button>
         <button
           onClick={() => editor.chain().focus().undo().run()}
@@ -202,17 +247,12 @@ const Tiptap = ({onEditorContentSave}) => {
         >
           Redo
         </button>
-        <button
-          onClick={() => editor.chain().focus().setColor('#958DF1').run()}
-          className={editor.isActive('textStyle', { color: '#958DF1' }) ? 'is-active' : ''}
-        >
-          Purple
-        </button>
+
       </div>
-        <div>
-            <EditorContent editor={editor}/>
+        <div className='border border-gray-500 border-t-0'>
+            <EditorContent editor={editor} className='max-h-96 overflow-y-scroll'/>
         </div>
-        <button onClick={handleEditorContent}>
+        <button onClick={handleEditorContent} className='bg-gray-400 px-2 py-1 rounded-md mt-5'>
             Save
         </button>
     </div>
