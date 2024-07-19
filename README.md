@@ -16,7 +16,7 @@ To get started with this project, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/shivamsan/Editext.git
+   git clone https://github.com/shivamsan/INSCRIBE.git
    cd text-editor
    ```
 
@@ -32,7 +32,7 @@ To get started with this project, follow these steps:
    npm start
    ```
 
-4. Open your browser and navigate to `http://localhost:5173` to see the text editor in action.
+4. Open your browser and navigate to `http://localhost:5173/INSCRIBE/` to see the text editor in action.
 
 ## Adding Tailwind CSS
 
