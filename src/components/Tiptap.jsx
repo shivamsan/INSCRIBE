@@ -249,8 +249,8 @@ const Tiptap = ({onEditorContentSave}) => {
         </button>
 
       </div>
-        <div className='border border-gray-500 border-t-0'>
-            <EditorContent editor={editor} className='max-h-96 overflow-y-scroll'/>
+        <div className='border border-gray-500 border-t-0 ' >
+            <EditorContent editor={editor} className='max-h-96  min-h-96 overflow-y-scroll '/>
         </div>
         <button onClick={handleEditorContent} className='bg-gray-400 px-2 py-1 rounded-md mt-5'>
             Save
