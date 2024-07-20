@@ -57,7 +57,7 @@ const Tiptap = ({onEditorContentSave}) => {
 
 
         <main>
-          <div class="container  bg-gradient-to-r from-purple-200 via-blue-100 to-purple-200 flex md:justify-between flex-col md:flex-row min-h-30
+          <div class="bg-gradient-to-r from-purple-200 via-blue-100 to-purple-200 flex md:justify-between flex-col md:flex-row min-h-30
           items-center border rounded-md shadow-lg">
                 
             <div class='lg:flex lg:items-center lg:justify-center py-5'>
