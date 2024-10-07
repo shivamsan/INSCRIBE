@@ -2,6 +2,8 @@
 
 A powerful and modern text editor built using React and enhanced with Tailwind CSS for an improved interface appearance. This project also integrates Tiptap to provide rich text editing capabilities.
 
+link to project: https://shivamsan.github.io/INSCRIBE/
+
 ## Features
 
 - **Rich Text Editing**: Powered by Tiptap, providing a highly customizable and extendable text editor.
